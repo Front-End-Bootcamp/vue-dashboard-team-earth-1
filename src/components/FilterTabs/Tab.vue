@@ -13,12 +13,12 @@ defineProps({
 
 <template>
 	<div class="tab" :class="{ active }">
-		<span class="dot" v-if="active"></span>
+		<span class="tab--dot" v-if="active"></span>
 		{{ title }}
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .tab {
 	display: flex;
 	flex-direction: column;
@@ -30,17 +30,20 @@ defineProps({
 	color: #8b8b8b;
 	margin: auto 0 1.125rem 0;
 	cursor: pointer;
+
+	&:hover {
+		color: #25364f;
+	}
+
+	&--dot {
+		width: 4px;
+		height: 4px;
+		background: #3c557a;
+		border-radius: 50%;
+		margin-bottom: 2px;
+	}
 }
-.tab:hover {
-	color: #25364f;
-}
-.dot {
-	width: 4px;
-	height: 4px;
-	background: #3c557a;
-	border-radius: 50%;
-	margin-bottom: 2px;
-}
+
 .active {
 	font-weight: 700;
 	color: #25364f;

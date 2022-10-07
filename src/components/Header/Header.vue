@@ -14,14 +14,14 @@ function plusButtonClick() {
 </script>
 
 <template>
-	<div class="header_container">
-		<div class="header_top">
+	<div class="header">
+		<div class="header--top">
 			<div>
-				<h1 class="header_title">Projects</h1>
+				<h1 class="top--title">Projects</h1>
 			</div>
 			<SearchBar @search="searchTriggered" />
-			<div class="header_top_right">
-				<div class="icons_container">
+			<div class="top--right">
+				<div class="right--icons">
 					<div class="iconumsu"></div>
 					<div class="iconumsu"></div>
 					<div class="iconumsu"></div>
@@ -29,7 +29,7 @@ function plusButtonClick() {
 				<ProfileDetails />
 			</div>
 		</div>
-		<div class="header_bottom">
+		<div class="header--bottom">
 			<PlusButton @btnClick="plusButtonClick" />
 			<FilterTabs />
 		</div>
@@ -37,47 +37,52 @@ function plusButtonClick() {
 </template>
 
 <style scoped lang="scss">
-.header_container {
+.header {
 	display: flex;
 	flex-direction: column;
 	gap: 28px;
 	padding: 32px 30px;
-}
 
-.header_bottom {
-	display: flex;
-	gap: 30px;
-}
-.header_top {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.header_title {
-	margin: 0;
-	font : {
-		family: "Roboto";
-		style: normal;
-		weight: 500;
-		size: 24px;
+	&--top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.top--title {
+			margin: 0;
+			line-height: 28px;
+			color: #3c557a;
+
+			font : {
+				family: "Roboto";
+				style: normal;
+				weight: 500;
+				size: 24px;
+			}
+		}
+
+		.top--right {
+			display: flex;
+			justify-content: center;
+
+			.right--icons {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+
+				div {
+					height: 28px;
+					width: 28px;
+					background-color: red;
+				}
+			}
+		}
 	}
-	line-height: 28px;
-	color: #3c557a;
-}
 
-.header_top_right {
-	display: flex;
-	justify-content: center;
-}
-
-.icons_container {
-	display: flex;
-	align-items: center;
-	gap: 2rem;
-	div {
-		height: 28px;
-		width: 28px;
-		background-color: red;
+	&--bottom {
+		display: flex;
+		gap: 30px;
 	}
+
 }
 </style>

@@ -42,22 +42,17 @@ function sortClick() {
 </script>
 
 <template>
-	<div class="tabs_bar">
-		<div class="tabs">
-			<Tab
-				v-for="title in titles"
-				:key="title.name"
-				:title="title.name"
-				:active="title.active"
-				@click="selectTab(title.name)"
-			/>
+	<div class="tabs-bar">
+		<div class="tabs-bar--tabs">
+			<Tab v-for="title in titles" :key="title.name" :title="title.name" :active="title.active"
+				@click="selectTab(title.name)" />
 		</div>
 		<SortGroup @sortClick="sortClick" />
 	</div>
 </template>
 
 <style lang="scss" scoped>
-.tabs_bar {
+.tabs-bar {
 	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
@@ -66,10 +61,11 @@ function sortClick() {
 	height: 3.25rem;
 	padding: 0 1.25rem;
 	width: 100%;
-}
-.tabs {
-	display: flex;
-	gap: 3rem;
-	margin: 0 1.25rem;
+
+	&--tabs {
+		display: flex;
+		gap: 3rem;
+		margin: 0 1.25rem;
+	}
 }
 </style>

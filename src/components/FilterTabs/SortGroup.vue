@@ -15,7 +15,7 @@ function clickHandler() {
 			viewBox="0 0 21 12"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			class="sort_icon"
+			class="sort--icon"
 			@click="clickHandler"
 		>
 			<path
@@ -37,7 +37,7 @@ function clickHandler() {
 	line-height: 16px;
 	color: #8b8b8b;
 
-	&_icon {
+	&--icon {
 		cursor: pointer;
 	}
 }
